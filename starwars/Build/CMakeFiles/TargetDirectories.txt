@@ -1,0 +1,3 @@
+/Users/kairovkonstantin/CLionProjects/starwars/Build/CMakeFiles/rebuild_cache.dir
+/Users/kairovkonstantin/CLionProjects/starwars/Build/CMakeFiles/edit_cache.dir
+/Users/kairovkonstantin/CLionProjects/starwars/Build/CMakeFiles/starwars.dir
