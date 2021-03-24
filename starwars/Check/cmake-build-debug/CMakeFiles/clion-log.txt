@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /Users/kairovkonstantin/CLionProjects/starwars/Check Select CMakeLists.txt
