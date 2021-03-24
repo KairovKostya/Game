@@ -1,9 +1,6 @@
 #include <iostream>
 #include "output/drawer.h"
 #include "controller/controller.cpp"
-#include "../input/Keyboard.cpp"
-#include <sys/ioctl.h>
-#include <termios.h>
 #define STDIN_FILENO 0
 
 
@@ -20,6 +17,7 @@ int main() {
     ConsoleDrawer::height = height;
     ConsoleDrawer::width = width;
     for(int i = 0; i < 100000000; ++i){
+        ConsoleDrawer::score = 0;
         Controller play = Controller();
         play.Control();
         std::cout << '\n' << "Press 'r' to restart\n";

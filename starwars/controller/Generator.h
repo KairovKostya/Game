@@ -4,6 +4,7 @@
 template<typename Obj>
 class Generator {
 public:
+    int speed_of_spawn = ConsoleDrawer::height/2;
     Obj* Generate();
 };
 
