@@ -2,10 +2,10 @@
 #include<iostream>
 #include<string>
 #include "drawer.h"
+#include "../controller/controller.h"
 
 int ConsoleDrawer::height = 21;
 int ConsoleDrawer::width = 41;
-int ConsoleDrawer::score = 0;
 bool ConsoleDrawer::exist = false;
 std::vector<std::vector<char> > ConsoleDrawer::field{0};
 
@@ -42,7 +42,7 @@ void ConsoleDrawer::ConsoleOutput() {
     for(int j = 0; j < width; ++j){
         std::cout << field[0][j];
     }
-    std::cout << " Score: " << score;
+    std::cout << " Score: " << Controller::score;
     std::cout << std::endl;
     for(int i = 1; i < height; ++i){
         for(int j = 0; j < width; ++j){

@@ -16,7 +16,8 @@ int main() {
     ConsoleDrawer::GetInstance();
     ConsoleDrawer::height = height;
     ConsoleDrawer::width = width;
-    for(int i = 0; i < 100000000; ++i){
+    int stop_time = 1e9;
+    for(int i = 0; i < stop_time; ++i){
         ConsoleDrawer::score = 0;
         Controller play = Controller();
         play.Control();

@@ -11,8 +11,6 @@ void Asteroid::Move(int x, int y) {
     coordinate_y += y;
 }
 void Asteroid::Draw() {
-    int x = coordinate_x;
-    int y = coordinate_y;
     if(ConsoleDrawer::field[coordinate_y][coordinate_x] == ' ')
         ConsoleDrawer::Change(coordinate_y, coordinate_x, 'U');
     if(coordinate_y>0){

@@ -7,6 +7,8 @@
 #include <thread>
 #include <list>
 
+int Controller::score = 0;
+
 void Controller::Control() {
     Generator<Asteroid> gen_of_asters;
     MainCharacter player = MainCharacter();

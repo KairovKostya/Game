@@ -8,7 +8,6 @@
 
 class Asteroid : Object{
 public:
-    //ConsoleDrawer& map;
     int coordinate_x;
     int coordinate_y;
     std::string teg = "obstacle";

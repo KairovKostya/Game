@@ -1,5 +1,6 @@
 #pragma once
 #include "Keyboard.h"
+#include "Direction.cpp"
 #include <stdio.h>
 #include <sys/ioctl.h>
 #include <termios.h>
@@ -52,9 +53,6 @@ Direction Keyboard::SetDirection(char key) {
             return Direction::RIGHT;
         case 's':
             return Direction::DOWN;
-        case 'n':
-            return Direction::NONE;
-
     }
     return Direction::NONE;
 }

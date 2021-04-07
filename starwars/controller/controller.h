@@ -8,8 +8,7 @@
 
 class Controller {
 public:
-    //ConsoleDrawer map;
-    //Controller(int height, int width);
+    static int score = 0;
     void Control();
 };
 

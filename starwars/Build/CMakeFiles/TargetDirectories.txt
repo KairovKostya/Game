@@ -1,0 +1,3 @@
+/Users/kairovkonstantin/Documents/GitTPGame/Game/starwars/Build/CMakeFiles/rebuild_cache.dir
+/Users/kairovkonstantin/Documents/GitTPGame/Game/starwars/Build/CMakeFiles/edit_cache.dir
+/Users/kairovkonstantin/Documents/GitTPGame/Game/starwars/Build/CMakeFiles/starwars.dir

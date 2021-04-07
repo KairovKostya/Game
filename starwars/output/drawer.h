@@ -9,7 +9,6 @@ public:
     static int width;
     static std::vector<std::vector<char> > field;
     static bool exist;
-    static int score;
 
     static void GetInstance();
     static void Flush();

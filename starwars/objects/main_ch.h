@@ -8,7 +8,6 @@ class MainCharacter : Object{
 
 public:
     MainCharacter();
-    //ConsoleDrawer& map;
     int coordinate_x;
     int coordinate_y;
     std::string teg = "player";
