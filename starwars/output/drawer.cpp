@@ -4,10 +4,8 @@
 #include "drawer.h"
 #include "../controller/controller.h"
 
-int ConsoleDrawer::height = 21;
-int ConsoleDrawer::width = 41;
-bool ConsoleDrawer::exist = false;
-std::vector<std::vector<char> > ConsoleDrawer::field{0};
+int ConsoleDrawer::height = Constants::normal_height_of_window;
+int ConsoleDrawer::width = Constants::normal_width_of_window;
 
 void ConsoleDrawer::GetInstance() {
     if(!ConsoleDrawer::exist){

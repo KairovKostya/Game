@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<vector>
+#include "../Constants.cpp"
 
 class ConsoleDrawer{
     ConsoleDrawer();
@@ -15,3 +16,7 @@ public:
     static void ConsoleOutput();
     static void Change(int x, int y, char symbol);
 };
+
+
+bool ConsoleDrawer::exist = false;
+std::vector<std::vector<char> > ConsoleDrawer::field{0};

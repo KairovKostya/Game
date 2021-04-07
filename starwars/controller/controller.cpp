@@ -1,12 +1,14 @@
 #pragma once
 #include "../objects/asteroid.cpp"
 #include "../objects/main_ch.cpp"
+#include "../Constants.cpp"
 #include "controller.h"
 #include "Generator.cpp"
 #include <chrono>
 #include <thread>
 #include <list>
 
+int Controller::speed_of_spawn = ConsoleDrawer::height/2;
 int Controller::score = 0;
 
 void Controller::Control() {
@@ -15,10 +17,10 @@ void Controller::Control() {
     Keyboard input;
     std::list<Asteroid*> guys;
     bool game_over = false;
-    for(int i = 0; i < 1000000000; ++i){
+    for(int i = 0; i < Constants::max_time_of_game; ++i){
         std::pair<int, int> dir = player.RealDirection(input.SetDirection(input.GetKey()));
-        std::this_thread::sleep_for(std::chrono::milliseconds(30));
-        if(i%gen_of_asters.speed_of_spawn == 0){
+        std::this_thread::sleep_for(std::chrono::milliseconds(Constants::tick));
+        if(i%speed_of_spawn == 0){
             guys.push_back(gen_of_asters.Generate());
         }
 

@@ -3,7 +3,7 @@ project(starwars)
 
 set(CMAKE_CXX_STANDARD 17)
 
-
+add_library(CONST Constants.cpp)
 include_directories(${starwars_SOURCE_DIR}/objects)
 include_directories(${starwars_SOURCE_DIR}/controller)
 include_directories(${starwars_SOURCE_DIR}/output)

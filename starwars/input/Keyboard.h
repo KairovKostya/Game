@@ -1,3 +1,5 @@
+#pragma once
+#include "Direction.cpp"
 
 class Keyboard {
 public:

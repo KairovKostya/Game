@@ -1,6 +1,7 @@
 #include <iostream>
 #include "output/drawer.h"
 #include "controller/controller.cpp"
+#include "Constants.cpp"
 #define STDIN_FILENO 0
 
 
@@ -10,15 +11,22 @@ int main() {
     std::cout << "Please, input map scales" << '\n';
     std::cout << "Width: ";
     std::cin >> width;
+    if(width > Constants::normal_width_of_window){
+        width = Constants::normal_width_of_window;
+        std::cout << "Max width is 41\n";
+    }
     std::cout << "Height: ";
     std::cin >> height;
+    if(height > Constants::normal_height_of_window){
+        height = Constants::normal_height_of_window;
+        std::cout << "Max height is 21\n";
+    }
     std::cout << "Press any button to play\n";
     ConsoleDrawer::GetInstance();
     ConsoleDrawer::height = height;
     ConsoleDrawer::width = width;
-    int stop_time = 1e9;
-    for(int i = 0; i < stop_time; ++i){
-        ConsoleDrawer::score = 0;
+    for(int i = 0; i < Constants::max_time_of_game; ++i){
+        Controller::score = 0;
         Controller play = Controller();
         play.Control();
         std::cout << '\n' << "Press 'r' to restart\n";

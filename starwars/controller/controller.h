@@ -8,7 +8,8 @@
 
 class Controller {
 public:
-    static int score = 0;
+    static int score;
+    static int speed_of_spawn;
     void Control();
 };
 

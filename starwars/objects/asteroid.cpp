@@ -26,7 +26,7 @@ void Asteroid::Falling() {
 }
 
 void Asteroid::Destroying() {
-    ConsoleDrawer:: score++;
+    Controller::score++;
     this->~Asteroid();
 }
 
