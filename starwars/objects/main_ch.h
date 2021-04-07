@@ -4,8 +4,6 @@
 #include "../input/Keyboard.cpp"
 
 class MainCharacter : Object{
-
-
 public:
     MainCharacter();
     int coordinate_x;

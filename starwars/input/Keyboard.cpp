@@ -37,7 +37,6 @@ int mygetch( ) {
 
 char Keyboard::GetKey() {
     char key = 'n';
-
     if(kbhit()){
         key = mygetch();
     }

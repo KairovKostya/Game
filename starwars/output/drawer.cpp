@@ -6,6 +6,8 @@
 
 int ConsoleDrawer::height = Constants::normal_height_of_window;
 int ConsoleDrawer::width = Constants::normal_width_of_window;
+bool ConsoleDrawer::exist = false;
+std::vector<std::vector<char> > ConsoleDrawer::field{0};
 
 void ConsoleDrawer::GetInstance() {
     if(!ConsoleDrawer::exist){

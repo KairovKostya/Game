@@ -17,6 +17,3 @@ public:
     static void Change(int x, int y, char symbol);
 };
 
-
-bool ConsoleDrawer::exist = false;
-std::vector<std::vector<char> > ConsoleDrawer::field{0};
