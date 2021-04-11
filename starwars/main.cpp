@@ -26,6 +26,7 @@ int main() {
     ConsoleDrawer::height = height;
     ConsoleDrawer::width = width;
     for(int i = 0; i < Constants::max_time_of_game; ++i){
+        MainCharacter::amount_of_lives = 10;
         Controller::score = 0;
         Controller play = Controller();
         play.Control();

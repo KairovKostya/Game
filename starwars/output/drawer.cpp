@@ -3,6 +3,7 @@
 #include<string>
 #include "drawer.h"
 #include "../controller/controller.h"
+#include "../objects/main_ch.cpp"
 
 int ConsoleDrawer::height = Constants::normal_height_of_window;
 int ConsoleDrawer::width = Constants::normal_width_of_window;
@@ -44,7 +45,13 @@ void ConsoleDrawer::ConsoleOutput() {
     }
     std::cout << " Score: " << Controller::score;
     std::cout << std::endl;
-    for(int i = 1; i < height; ++i){
+
+    for(int j = 0; j < width; ++j){
+        std::cout << field[1][j];
+    }
+    std::cout << " Lives: " << MainCharacter::amount_of_lives;
+    std::cout << std::endl;
+    for(int i = 2; i < height; ++i){
         for(int j = 0; j < width; ++j){
             std::cout << field[i][j];
         }
