@@ -8,7 +8,6 @@ int MainCharacter::amount_of_lives = 10;
 MainCharacter::MainCharacter() {
     coordinate_y = ConsoleDrawer::height - 4;
     coordinate_x = ConsoleDrawer::width/2;
-
 }
 
 void MainCharacter::Draw() {

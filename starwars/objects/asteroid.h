@@ -8,13 +8,14 @@
 
 class Asteroid : Object{
 public:
-    static int frequency_of_dd_asteroids;
-    static int frequency_of_fast_asteroids;
+    const static int frequency_of_dd_asteroids = 5;
+    const static int frequency_of_fast_asteroids = 7;
     std::vector<char> form;
+
     int coordinate_x;
     int coordinate_y;
     int speed;
-    int damage = 1;
+    int damage;
     bool Trigger(int x, int y);
     void Destroying();
     void Falling(int number_of_frame);

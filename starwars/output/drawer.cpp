@@ -4,6 +4,7 @@
 #include "drawer.h"
 #include "../controller/controller.h"
 #include "../objects/main_ch.cpp"
+#include <algorithm>
 
 int ConsoleDrawer::height = Constants::normal_height_of_window;
 int ConsoleDrawer::width = Constants::normal_width_of_window;
@@ -49,7 +50,7 @@ void ConsoleDrawer::ConsoleOutput() {
     for(int j = 0; j < width; ++j){
         std::cout << field[1][j];
     }
-    std::cout << " Lives: " << MainCharacter::amount_of_lives;
+    std::cout << " Lives: " << std::max(MainCharacter::amount_of_lives, 0);
     std::cout << std::endl;
     for(int i = 2; i < height; ++i){
         for(int j = 0; j < width; ++j){

@@ -2,12 +2,10 @@
 #include "asteroid.h"
 #include "string"
 
-int Asteroid::frequency_of_dd_asteroids = 5;
-int Asteroid::frequency_of_fast_asteroids = 7;
-
 Asteroid::Asteroid() :  coordinate_y(0){
     coordinate_x = rand()%(ConsoleDrawer::width-2) + 1;
     speed = 2;
+    damage = 1;
     form.resize(3);
     form[0] = '.';
     form[1] = '.';
@@ -19,15 +17,12 @@ void Asteroid::Move(int x, int y) {
     coordinate_y += y;
 }
 void Asteroid::Draw() {
-    if(ConsoleDrawer::field[coordinate_y][coordinate_x] == ' ')
-        ConsoleDrawer::Change(coordinate_y, coordinate_x, form[2]);
-    if(coordinate_y>0){
-        if(ConsoleDrawer::field[coordinate_y-1][coordinate_x] == ' ')
-            ConsoleDrawer::Change(coordinate_y-1, coordinate_x, form[1]);
+    for(int i = 0; i < form.size(); ++i){
+        if(coordinate_y>i){
+            if(ConsoleDrawer::field[coordinate_y-i][coordinate_x] == ' ')
+                ConsoleDrawer::Change(coordinate_y-i, coordinate_x, form[form.size() - i-1]);
+        }
     }
-    if(coordinate_y>1)
-        if(ConsoleDrawer::field[coordinate_y-2][coordinate_x] == ' ')
-            ConsoleDrawer::Change(coordinate_y-2, coordinate_x, form[0]);
 }
 void Asteroid::Falling(int number_of_frame) {
     if(number_of_frame % speed == 0){

@@ -9,8 +9,11 @@
 #include <thread>
 #include <list>
 
-int Controller::speed_of_spawn = ConsoleDrawer::height/2;
 int Controller::score = 0;
+
+Controller::Controller() {
+    speed_of_spawn_asteroids = ConsoleDrawer::height/2;
+}
 
 void Controller::Control() {
 
@@ -21,18 +24,21 @@ void Controller::Control() {
 
     std::list<Asteroid*> guys;
     bool game_over = false;
+    int number_of_asteroid = 0;
 
     for(int i = 0; i < Constants::max_time_of_game; ++i){
+
         std::pair<int, int> dir = player.RealDirection(input.SetDirection(input.GetKey()));
         std::this_thread::sleep_for(std::chrono::milliseconds(Constants::tick));
 
-        if(i%speed_of_spawn == 0){
+        if(i%speed_of_spawn_asteroids == 0){
+            ++number_of_asteroid;
             Asteroid* new_aster = gen_of_asters.Generate();
-            if((i+1) % Asteroid::frequency_of_fast_asteroids == 0){
-                decorator.MakeFaster(new_aster);
-            }
-            if((i+1) % Asteroid::frequency_of_dd_asteroids == 0){
+            if(number_of_asteroid % Asteroid::frequency_of_dd_asteroids == 0){
                 decorator.MakeDoubleDamage(new_aster);
+            }
+            if(number_of_asteroid % Asteroid::frequency_of_fast_asteroids == 0) {
+                decorator.MakeFaster(new_aster);
             }
             guys.push_back(new_aster);
         }
@@ -43,7 +49,6 @@ void Controller::Control() {
             if(aster->coordinate_y > ConsoleDrawer::height-1){
                 it = guys.erase(it);
                 aster->Destroying();
-                delete aster;
             }
             else{
                 aster->Draw();
@@ -51,7 +56,6 @@ void Controller::Control() {
                     MainCharacter::amount_of_lives-=aster->damage;
                     it = guys.erase(it);
                     aster->Destroying();
-                    delete aster;
                 }
                 else{
                     aster->Falling(i);
