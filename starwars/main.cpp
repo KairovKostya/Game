@@ -6,26 +6,11 @@
 
 
 int main() {
-
-    int height, width;
-    std::cout << "Please, input map scales" << '\n';
-    std::cout << "Width: ";
-    std::cin >> width;
-    if(width > Constants::normal_width_of_window){
-        width = Constants::normal_width_of_window;
-        std::cout << "Max width is 41\n";
-    }
-    std::cout << "Height: ";
-    std::cin >> height;
-    if(height > Constants::normal_height_of_window){
-        height = Constants::normal_height_of_window;
-        std::cout << "Max height is 21\n";
-    }
-    std::cout << "Press any button to play\n";
     ConsoleDrawer::GetInstance();
-    ConsoleDrawer::height = height;
-    ConsoleDrawer::width = width;
+    Keyboard kb;
+
     for(int i = 0; i < Constants::max_time_of_game; ++i){
+        MainCharacter::amount_of_lives = 10;
         Controller::score = 0;
         Controller play = Controller();
         play.Control();
@@ -33,7 +18,7 @@ int main() {
         std::cout << "Press 'q' to quit\n";
         char x;
         while(x!='r' && x!='q') {
-            x = mygetch();
+            x = kb.mygetch();
         }
         if(x=='q') return 0;
         x = ' ';

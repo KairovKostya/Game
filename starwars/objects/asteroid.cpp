@@ -4,6 +4,13 @@
 
 Asteroid::Asteroid() :  coordinate_y(0){
     coordinate_x = rand()%(ConsoleDrawer::width-2) + 1;
+    speed = 2;
+    damage = 1;
+    form.resize(4);
+    form[0] = " ";
+    form[1] = "\033[31;1m.\033[0m";
+    form[2] = "\033[31;1m.\033[0m";
+    form[3] = "\033[31;1m˅\033[0m";
 }
 
 void Asteroid::Move(int x, int y) {
@@ -11,18 +18,17 @@ void Asteroid::Move(int x, int y) {
     coordinate_y += y;
 }
 void Asteroid::Draw() {
-    if(ConsoleDrawer::field[coordinate_y][coordinate_x] == ' ')
-        ConsoleDrawer::Change(coordinate_y, coordinate_x, 'U');
-    if(coordinate_y>0){
-        if(ConsoleDrawer::field[coordinate_y-1][coordinate_x] == ' ')
-            ConsoleDrawer::Change(coordinate_y-1, coordinate_x, '.');
+    for(int i = 0; i < form.size(); ++i){
+        if(coordinate_y>i){
+            if(ConsoleDrawer::field[coordinate_y-i][coordinate_x] == " ")
+                ConsoleDrawer::Change(coordinate_y-i, coordinate_x, form[form.size() - i-1]);
+        }
     }
-    if(coordinate_y>1)
-        if(ConsoleDrawer::field[coordinate_y-2][coordinate_x] == ' ')
-            ConsoleDrawer::Change(coordinate_y-2, coordinate_x, '.');
 }
-void Asteroid::Falling() {
-    Move(0,1);
+void Asteroid::Falling(int number_of_frame) {
+    if(number_of_frame % speed == 0){
+        Move(0,1);
+    }
 }
 
 void Asteroid::Destroying() {

@@ -8,12 +8,12 @@ class ConsoleDrawer{
 public:
     static int height;
     static int width;
-    static std::vector<std::vector<char> > field;
+    static std::vector<std::vector<std::string> > field;
     static bool exist;
 
     static void GetInstance();
     static void Flush();
     static void ConsoleOutput();
-    static void Change(int x, int y, char symbol);
+    static void Change(int x, int y, std::string symbol);
 };
 

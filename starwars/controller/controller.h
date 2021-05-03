@@ -7,9 +7,10 @@
 
 
 class Controller {
+    int speed_of_spawn_asteroids;
 public:
+    Controller();
     static int score;
-    static int speed_of_spawn;
     void Control();
 };
 

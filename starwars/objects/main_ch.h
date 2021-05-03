@@ -8,8 +8,7 @@ public:
     MainCharacter();
     int coordinate_x;
     int coordinate_y;
-    std::string teg = "player";
-
+    static int amount_of_lives;
     std::pair<int, int> RealDirection(Direction input);
     void Draw();
     void Move(int x, int y);
