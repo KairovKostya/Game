@@ -6,7 +6,7 @@
 #include <termios.h>
 #define STDIN_FILENO 0
 
-bool kbhit()
+bool Keyboard::kbhit()
 {
     termios term;
     tcgetattr(0, &term);
@@ -22,7 +22,7 @@ bool kbhit()
     return (byteswaiting > 0);
 }
 
-int mygetch( ) {
+int Keyboard::mygetch() {
     struct termios oldt,
             newt;
     int ch;

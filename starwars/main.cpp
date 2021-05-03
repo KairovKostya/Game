@@ -7,6 +7,7 @@
 
 int main() {
     ConsoleDrawer::GetInstance();
+    Keyboard kb;
 
     for(int i = 0; i < Constants::max_time_of_game; ++i){
         MainCharacter::amount_of_lives = 10;
@@ -17,7 +18,7 @@ int main() {
         std::cout << "Press 'q' to quit\n";
         char x;
         while(x!='r' && x!='q') {
-            x = mygetch();
+            x = kb.mygetch();
         }
         if(x=='q') return 0;
         x = ' ';

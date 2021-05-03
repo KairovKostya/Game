@@ -11,13 +11,13 @@ MainCharacter::MainCharacter() {
 }
 
 void MainCharacter::Draw() {
-    ConsoleDrawer::field[coordinate_y][coordinate_x] = '$';
-    ConsoleDrawer::field[coordinate_y][coordinate_x-1] = '/';
-    ConsoleDrawer::field[coordinate_y][coordinate_x+1] = '\\';
-    ConsoleDrawer::field[coordinate_y-1][coordinate_x] = 'A';
-    ConsoleDrawer::field[coordinate_y+1][coordinate_x] = '*';
-    ConsoleDrawer::field[coordinate_y+1][coordinate_x-1] = '\\';
-    ConsoleDrawer::field[coordinate_y+1][coordinate_x+1] = '/';
+    ConsoleDrawer::field[coordinate_y][coordinate_x] = "\033[94;1m☢\033[0m";
+    ConsoleDrawer::field[coordinate_y][coordinate_x-1] = "\033[94;1m/\033[0m";
+    ConsoleDrawer::field[coordinate_y][coordinate_x+1] = "\033[94;1m\\\033[0m";
+    ConsoleDrawer::field[coordinate_y-1][coordinate_x] = "\033[94;1mA\033[0m";
+    ConsoleDrawer::field[coordinate_y+1][coordinate_x] = "\033[94;1m*\033[0m";
+    ConsoleDrawer::field[coordinate_y+1][coordinate_x-1] = "\033[94;1m\\\033[0m";
+    ConsoleDrawer::field[coordinate_y+1][coordinate_x+1] = "\033[94;1m/\033[0m";
 }
 
 void MainCharacter::Move(int x, int y) {

@@ -8,9 +8,7 @@
 
 class Asteroid : Object{
 public:
-    const static int frequency_of_dd_asteroids = 5;
-    const static int frequency_of_fast_asteroids = 7;
-    std::vector<char> form;
+    std::vector<std::string> form;
 
     int coordinate_x;
     int coordinate_y;

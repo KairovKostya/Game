@@ -6,10 +6,11 @@ Asteroid::Asteroid() :  coordinate_y(0){
     coordinate_x = rand()%(ConsoleDrawer::width-2) + 1;
     speed = 2;
     damage = 1;
-    form.resize(3);
-    form[0] = '.';
-    form[1] = '.';
-    form[2] = 'U';
+    form.resize(4);
+    form[0] = " ";
+    form[1] = "\033[31;1m.\033[0m";
+    form[2] = "\033[31;1m.\033[0m";
+    form[3] = "\033[31;1m˅\033[0m";
 }
 
 void Asteroid::Move(int x, int y) {
@@ -19,7 +20,7 @@ void Asteroid::Move(int x, int y) {
 void Asteroid::Draw() {
     for(int i = 0; i < form.size(); ++i){
         if(coordinate_y>i){
-            if(ConsoleDrawer::field[coordinate_y-i][coordinate_x] == ' ')
+            if(ConsoleDrawer::field[coordinate_y-i][coordinate_x] == " ")
                 ConsoleDrawer::Change(coordinate_y-i, coordinate_x, form[form.size() - i-1]);
         }
     }

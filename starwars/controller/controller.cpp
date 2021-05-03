@@ -16,7 +16,6 @@ Controller::Controller() {
 }
 
 void Controller::Control() {
-
     Generator<Asteroid> gen_of_asters;
     MainCharacter player = MainCharacter();
     Keyboard input;
@@ -34,11 +33,14 @@ void Controller::Control() {
         if(i%speed_of_spawn_asteroids == 0){
             ++number_of_asteroid;
             Asteroid* new_aster = gen_of_asters.Generate();
-            if(number_of_asteroid % Asteroid::frequency_of_dd_asteroids == 0){
+            if(number_of_asteroid % Constants::frequency_of_dd_asteroids == 0){
                 decorator.MakeDoubleDamage(new_aster);
             }
-            if(number_of_asteroid % Asteroid::frequency_of_fast_asteroids == 0) {
+            if(number_of_asteroid % Constants::frequency_of_fast_asteroids == 0) {
                 decorator.MakeFaster(new_aster);
+            }
+            if(number_of_asteroid % Constants::frequency_of_slow_asteroids == 0) {
+                decorator.MakeSlower(new_aster);
             }
             guys.push_back(new_aster);
         }
@@ -61,7 +63,6 @@ void Controller::Control() {
                     aster->Falling(i);
                 }
             }
-
         }
 
 

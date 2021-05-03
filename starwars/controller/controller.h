@@ -11,7 +11,6 @@ class Controller {
 public:
     Controller();
     static int score;
-
     void Control();
 };
 
