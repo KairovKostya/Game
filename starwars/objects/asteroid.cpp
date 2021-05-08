@@ -1,6 +1,7 @@
 #pragma once
 #include "asteroid.h"
 #include "string"
+#include "drawer.h"
 
 Asteroid::Asteroid() :  coordinate_y(0){
     coordinate_x = rand()%(ConsoleDrawer::width-2) + 1;
@@ -11,6 +12,10 @@ Asteroid::Asteroid() :  coordinate_y(0){
     form[1] = "\033[31;1m.\033[0m";
     form[2] = "\033[31;1m.\033[0m";
     form[3] = "\033[31;1m˅\033[0m";
+}
+
+void Asteroid::Update() {
+    skip_turns = 10;
 }
 
 void Asteroid::Move(int x, int y) {
@@ -27,20 +32,14 @@ void Asteroid::Draw() {
 }
 void Asteroid::Falling(int number_of_frame) {
     if(number_of_frame % speed == 0){
-        Move(0,1);
+        if(skip_turns > 0) --skip_turns;
+        else Move(0,1);
     }
 }
 
 void Asteroid::Destroying() {
     Controller::score++;
     this->~Asteroid();
-}
-
-Asteroid& Asteroid::operator=(Asteroid another) {
-    coordinate_x = another.coordinate_x;
-    coordinate_y = another.coordinate_y;
-    teg = another.teg;
-    return *this;
 }
 
 bool Asteroid::Trigger(int x, int y) {

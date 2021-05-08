@@ -1,3 +1,4 @@
+#pragma once
 #include "AsteroidDecorator.h"
 
 void AsteroidDecorator::MakeDoubleDamage(Asteroid* aster) {
@@ -15,4 +16,5 @@ void AsteroidDecorator::MakeSlower(Asteroid *aster) {
     aster->speed*=3;
     aster->damage*=3;
     aster->form[0] = "\033[93;1m!\033[0m";
+    aster->form[0] = "\033[92;1m!\033[0m";
 }

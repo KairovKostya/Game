@@ -1,4 +1,5 @@
 #include<iostream>
+#pragma once
 
 class Object{
 public:
@@ -8,4 +9,5 @@ public:
     virtual void Draw() = 0;
     virtual void Move(int x, int y) = 0;
     virtual void Destroying() = 0;
+    virtual void Update() = 0;
 };
