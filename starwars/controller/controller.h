@@ -1,12 +1,12 @@
 #pragma once
-#include "../objects/object.cpp"
+#include "object.cpp"
 #include "string"
 #include <iostream>
 #include <vector>
-#include "../output/drawer.cpp"
+#include "drawer.h"
+#include "Publisher.h"
 
-
-class Controller {
+class Controller : public Publisher{
     int speed_of_spawn_asteroids;
 public:
     Controller();

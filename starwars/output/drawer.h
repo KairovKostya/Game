@@ -10,7 +10,6 @@ public:
     static int width;
     static std::vector<std::vector<std::string> > field;
     static bool exist;
-
     static void GetInstance();
     static void Flush();
     static void ConsoleOutput();

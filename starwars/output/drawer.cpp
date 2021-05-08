@@ -2,8 +2,8 @@
 #include<iostream>
 #include<string>
 #include "drawer.h"
-#include "../controller/controller.h"
-#include "../objects/main_ch.cpp"
+#include "controller.h"
+#include "main_ch.cpp"
 #include <algorithm>
 
 int ConsoleDrawer::height = Constants::normal_height_of_window;

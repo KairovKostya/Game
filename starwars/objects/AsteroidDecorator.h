@@ -1,4 +1,5 @@
-#include "asteroid.cpp"
+#pragma once
+#include "asteroid.h"
 
 class AsteroidDecorator {
 public:

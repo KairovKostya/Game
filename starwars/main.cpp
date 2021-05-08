@@ -1,6 +1,6 @@
 #include <iostream>
-#include "output/drawer.h"
-#include "controller/controller.cpp"
+#include "drawer.h"
+#include "controller.cpp"
 #include "Constants.cpp"
 #define STDIN_FILENO 0
 

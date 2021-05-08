@@ -1,5 +1,6 @@
 #pragma once
-#include "../objects/asteroid.cpp"
+#include "asteroid.cpp"
+#include "object.h"
 
 template<typename Obj>
 class Generator {
